@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			var arr = [3,1,4,2,5,21,6,15,63];
+			console.log(sortA(arr))
+			function sortA(arr){
+			    // 如果只有一位，就没有必要比较
+			    if(arr.length<=1){
+			        return arr;
+			    }
+			    // 获取中间值的索引
+			    var len = Math.floor(arr.length/2);
+			    // 截取中间值
+			    var cur = arr.splice(len,1);
+//			    console.log(cur)
+			    // 小于中间值放这里面
+			    var left = [];
+			    // 大于的放着里面
+			    var right = [];
+			    for(var i=0;i<arr.length;i++){
+			        // 判断是否大于
+			        if(cur>arr[i]){
+			            left.push(arr[i]);
+			        }else{
+			            right.push(arr[i]);
+			        }
+			    }
+			    // 通过递归，上一轮比较好的数组合并，并且再次进行比较。
+			    return sortA(left).concat(cur,sortA(right));
+			}
+		</script>
+	</body>
+</html>
