@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			var a='我是大哥';
+			var b='我是二哥';
+			var c='我是三弟';
+			var x=Math.floor(Math.random()*10+1);//1-10之间随机数
+			switch(x)
+			{
+			case 1:
+			case 2:alert(a);break; //1和2时,弹出a,正好百分之20
+			case 3:
+			case 4:
+			case 5:alert(b);break; //3、4、5时弹出b,百分之30
+			case 6:
+			case 7:
+			case 8:
+			case 9:
+			case 10:alert(c);break; //剩下的百分之50
+			}
+		</script>
+	</body>
+</html>
